@@ -6,11 +6,21 @@
   "author": "Eckhardt Dreyer <@eckhardtdreyer>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "cli": "ts-node src/cli.ts",
+    "test": "jest",
+    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+    "build": "yarn esbuild && tsc -p tsconfig.json",
+    "esbuild": "esbuild src/main.ts --bundle --platform=node --outfile=bundle/main.js",
+    "clean": "rm -rf dist build",
+    "ts-node": "ts-node"
+  },
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "@types/node": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
+    "esbuild": "^0.14.12",
     "eslint": "^8.7.0",
     "jest": "^27.4.7",
     "ts-jest": "^27.1.3",

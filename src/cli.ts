@@ -1,0 +1,1 @@
+export const cli = () => console.log("hello world!");
