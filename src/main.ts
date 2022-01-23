@@ -1,1 +1,1 @@
-export { cli } from "./cli";
+console.log("Some module stuff..")

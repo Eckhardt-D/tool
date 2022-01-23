@@ -6,14 +6,18 @@
   "author": "Eckhardt Dreyer <@eckhardtdreyer>",
   "license": "MIT",
   "private": true,
+  "bin": {
+    "ts-adventures": "bin/ts-adventures"
+  },
   "scripts": {
-    "cli": "ts-node src/cli.ts",
     "test": "jest",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
-    "build": "yarn esbuild && tsc -p tsconfig.json",
-    "esbuild": "esbuild src/main.ts --bundle --platform=node --outfile=bundle/main.js",
-    "clean": "rm -rf dist build",
-    "ts-node": "ts-node"
+    "dev:cli": "yarn build:cli --watch && yarn build:main --watch",
+    "dev:main": "yarn build:main --watch",
+    "build:main": "esbuild src/main.ts --bundle --platform=node --outfile=dist/main.js",
+    "build:cli": "esbuild src/cli.ts --bundle --platform=node --outfile=dist/cli.js",
+    "build": "yarn build:cli && yarn build:main",
+    "cli:install": "npm i -g ."
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",
@@ -26,5 +30,10 @@
     "ts-jest": "^27.1.3",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "boxen": "^6.2.1",
+    "chalk": "^5.0.0",
+    "yargs": "^17.3.1"
   }
 }
