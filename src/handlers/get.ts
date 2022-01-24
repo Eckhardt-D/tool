@@ -33,7 +33,6 @@ function readFile(path: string) {
 export async function getCommandHandler(
   args: Arguments<GetArguments>
 ): Promise<void> {
-  console.log(args);
   if (args.file && args.url) {
     console.log("Cannot define file and url simultaneously. Use -h for help.");
     return;

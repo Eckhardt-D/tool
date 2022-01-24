@@ -17,5 +17,7 @@ export const getCommandOptions = (yargs: Argv) => {
     .string("u")
     .describe("u", "The url to request text content from")
     .help("h")
-    .alias("h", "help").argv;
+    .alias("h", "help")
+    .version()
+    .alias("v", "version").argv;
 };

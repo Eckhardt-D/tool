@@ -5,13 +5,13 @@ General purpose CLI tool for everyday things 🛠️
 # Installation
 
 ```bash
-npm install -g tool
+npm install -g @eckidevs/tool
 ```
 
 or
 
 ```bash
-yarn global add tool
+yarn global add @eckidevs/tool
 ```
 
 # Usage
