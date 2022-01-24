@@ -18,4 +18,6 @@ yargs(hideBin(process.argv))
   )
   .help("h")
   .alias("h", "help")
+  .version()
+  .alias("v", "version")
   .epilog("Kaizen Media CC").argv;

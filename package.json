@@ -1,6 +1,6 @@
 {
   "name": "@eckidevs/tool",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "Tool CLI for everyday tasks.",
   "author": "Eckhardt Dreyer <@eckhardtdreyer>",
   "license": "MIT",

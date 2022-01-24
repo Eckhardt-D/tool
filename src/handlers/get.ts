@@ -43,7 +43,7 @@ export async function getCommandHandler(
     return;
   }
 
-  const isWebRequest: boolean = !!args.url;
+  const isWebRequest = !!args.url;
   const path: string = args.file || args.url;
   return isWebRequest ? await handleRequest(path) : readFile(path);
 }
