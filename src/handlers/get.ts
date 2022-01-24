@@ -14,8 +14,8 @@ async function handleRequest(url: string) {
     const { body } = await request(final);
     const text = await body.text();
     console.log(text);
-  } catch (error: any) {
-    console.log("Could not fetch: ", error.message);
+  } catch (_: any) {
+    console.log(`Could not fetch ${url}`);
   }
 }
 
