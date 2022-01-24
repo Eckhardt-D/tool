@@ -1,22 +1,18 @@
 {
-  "name": "ts-adventures",
-  "version": "1.0.0",
-  "description": "TypeScript explorations",
-  "main": "dist/index.js",
+  "name": "tool",
+  "version": "0.1.0",
+  "description": "Tool CLI for everyday tasks.",
   "author": "Eckhardt Dreyer <@eckhardtdreyer>",
   "license": "MIT",
-  "private": true,
   "bin": {
-    "ts-adventures": "bin/ts-adventures"
+    "tool": "./bin/tool"
   },
   "scripts": {
     "test": "jest",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
-    "dev:cli": "yarn build:cli --watch && yarn build:main --watch",
-    "dev:main": "yarn build:main --watch",
-    "build:main": "esbuild src/main.ts --bundle --platform=node --outfile=dist/main.js",
+    "dev": "ts-node src/cli",
     "build:cli": "esbuild src/cli.ts --bundle --platform=node --outfile=dist/cli.js",
-    "build": "yarn build:cli && yarn build:main",
+    "build": "yarn lint && yarn build:cli",
     "cli:install": "npm i -g ."
   },
   "devDependencies": {
@@ -34,6 +30,12 @@
   "dependencies": {
     "boxen": "^6.2.1",
     "chalk": "^5.0.0",
+    "undici": "^4.12.2",
     "yargs": "^17.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eckhardt-D/tool"
+  },
+  "homepage": "https://github.com/Eckhardt-D/tool"
 }
